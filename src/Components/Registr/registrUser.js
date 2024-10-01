@@ -30,7 +30,7 @@ export default async function registrUser(
   createUserWithEmailAndPassword(auth, objUser.email, objUser.password)
     .then((user) => {
       navigate("/")
-      addUser({email: objUser.email, password: objUser.password})
+      addUser({email: objUser.email, password: objUser.password, name: objUser.name, surname: objUser.surname})
 })
     .catch((err) => {
       setValidUser(true);

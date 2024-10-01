@@ -1,0 +1,50 @@
+@import "../../style/vars.scss";
+
+.wrapper_card {
+  display: flex;
+  justify-content: baseline;
+  gap: 30px;
+  width: 620px;
+  z-index: 10;
+  .card_image {
+    width: 200px;
+    .card_poster {
+      width: 100%;
+    }
+  }
+  .card_info {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    font-family: $font;
+    .img_heart, .img_star{
+      width: 25px;
+      position: absolute;
+      right: 1px;
+      cursor: pointer;
+    }
+    .favorities{
+      position: absolute;
+      right: -100px;
+      top: 5px;
+      color: rgb(230, 231, 231);
+    }
+    .card_info-nameRu {
+      color: white;
+    }
+    .card_info-nameEn {
+      color: white;
+    }
+    .card_info-year {
+      color: #ff5500;
+    }
+    .card_info-genre {
+      color: rgb(182, 185, 183);
+    }
+    .card_info-country {
+      color: rgb(182, 185, 183);
+    }
+  }
+}

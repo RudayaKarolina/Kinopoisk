@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import exit from "../../assets/logout.png";
 import "./Nav.scss";
 
 export default function Nav() {
@@ -13,22 +14,21 @@ export default function Nav() {
       navigate("/login");
     });
   }
-  
+
   return (
     <div className="navigation">
-      <div className="wrapper_logo">
-        {" "}
-        <img src={logo} alt="logo" />
+      <div className="wrapper_logo" onClick={() => navigate("/")}>
+        <img src={logo} alt="logo" className="nav_logo"/>
       </div>
       <div className="links">
-        <NavLink to="/films">Films</NavLink>
-        <NavLink to="/home">Home</NavLink>
-        <a href="">dcsdcsd</a>
-        <a href="">dcfedscs</a>
+        <NavLink to="/premiera" className="one_link">Премьеры</NavLink>
+        <NavLink to="/films" className="one_link">Фильмы</NavLink>
+        <NavLink to="/serials" className="one_link">Сериалы</NavLink>
+        <NavLink to="/search" className="one_link">Поиск</NavLink>
       </div>
       <div className="wrapper_user">
-        <div className="user" onDoubleClick={exitUser}>
-          <p>KR</p>
+        <div className="user" onClick={exitUser}>
+          <img src={exit} alt="exit" />
         </div>
       </div>
     </div>

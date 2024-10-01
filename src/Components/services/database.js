@@ -15,6 +15,7 @@ export async function addUser(userData) {
     console.log(e);
   }
 }
+
 export async function getUsers() {
   try {
     const snapshot = await db.ref("users").once("value");

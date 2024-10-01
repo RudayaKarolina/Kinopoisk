@@ -1,3 +1,5 @@
+@import "../../style/vars.scss";
+
 .navigation {
   width: 100%;
   padding: 30px 80px;
@@ -6,26 +8,27 @@
   align-items: center;
   position: absolute;
   z-index: 8;
-  background-color: rgba(0, 0, 0, 0.74);
+  background-color: rgba(0, 0, 0, 0.658);
   .wrapper_logo {
     width: 30%;
-    img {
+    cursor: pointer;
+    .nav_logo {
       width: 200px;
     }
   }
-
   .links {
-    width: 40%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    a {
+    .one_link {
       color: white;
       text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
       font-size: 24px;
       padding-bottom: 5px;
+      font-family: $font;
     }
     .active {
       border-bottom: 2px solid #ff5500;
@@ -35,16 +38,6 @@
     width: 30%;
     display: flex;
     justify-content: end;
-    .user {
-      width: 70px;
-      background-color: white;
-      padding: 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      p {
-        font-size: 24px;
-        font-weight: 700;
-      }
-    }
+    cursor: pointer;
   }
 }

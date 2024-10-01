@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import fon from "../../assets/login-fon.jfif";
@@ -20,10 +20,10 @@ export default function Login() {
       return;
     }
     signInWithEmailAndPassword(auth, email, password)
-      .then((user) => {
+      .then(() => {
         navigate("/");
       })
-      .catch((err) => {
+      .catch(() => {
         setValidUser(true);
         return;
       });
@@ -31,35 +31,36 @@ export default function Login() {
 
   useEffect(() => {
     setValidUser(false);
+    setEmptyfield(false);
   }, [email, password]);
 
-  useEffect(() => {
-    setEmptyfield(false);
-  }, [password, email]);
-
-  return (
+    return (
     <div className="login">
       <div className="background-login">
-        <img src={fon} alt="logo" />
+        <img src={fon} alt="logo" className="logo"/>
         <form className="form">
-          <h2>Войдите или зарегистрируйтесь</h2>
+          <h2 className="form_heading">Войдите или зарегистрируйтесь</h2>
           <input
             type="email"
             placeholder="E-mail"
             value={email}
+            className="form_input"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
             placeholder="Пароль"
             value={password}
+             className="form_input"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="button" onClick={entryUser}>
+          <button type="button" onClick={entryUser} className="form_button">
             Войти
           </button>
-          <Link to="/registr" style={{textDecoration:"underline"}}>Зарегистрироваться</Link>
-          <Link to="/reset">Забыли пароль?</Link>
+          <Link to="/registr" className="links registr_link">
+            Зарегистрироваться
+          </Link>
+          <Link to="/reset" className="links">Забыли пароль?</Link>
           {emptyField && (
             <p className="valid-pass">Все поля должны быть заполнены!</p>
           )}

@@ -1,7 +1,7 @@
-export async function getFilms() {
+export async function getSerials() {
   try {
     const resp = await fetch(
-      "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1",
+      "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_TV_SHOWS&page=1",
       {
         method: "GET",
         headers: {
@@ -11,8 +11,8 @@ export async function getFilms() {
       }
     );
     const data = await resp.json();
-    const films = await data.items;
-    return films;
+    const serials = await data.items;
+    return serials;
   } catch (e) {
     console.log(e);
   }

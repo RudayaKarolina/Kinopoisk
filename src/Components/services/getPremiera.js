@@ -1,7 +1,7 @@
-export async function getFilms() {
+export async function getPremiera(year, month) {
   try {
     const resp = await fetch(
-      "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1",
+      `https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=${year}&month=${month}`,
       {
         method: "GET",
         headers: {
@@ -10,9 +10,9 @@ export async function getFilms() {
         },
       }
     );
-    const data = await resp.json();
-    const films = await data.items;
-    return films;
+    const films = await resp.json();
+    const items = await films.items;
+    return items;
   } catch (e) {
     console.log(e);
   }

@@ -1,0 +1,61 @@
+@import "../../style/vars.scss";
+
+.wrapper-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: $font;
+  .form-search {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 100px 0 0 0;
+    z-index: 9;
+    width: 620px;
+    .search_text {
+      width: 80%;
+      height: 50px;
+      border-radius: 20px;
+      border: 2px solid grey;
+      padding-left: 30px;
+      outline: none;
+      color: white;
+      background-color: black;
+      font-size: 18px;
+    }
+    .search_btn {
+      width: 20%;
+      background-color: white;
+      color: black;
+      height: 50px;
+      border-radius: 20px;
+      font-size: 18px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  }
+  .founded {
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.mistakes {
+  width: 620px;
+  position: fixed;
+  top: 190px;
+  .not_founded {
+    width: 80%;
+    color: rgba(255, 255, 255, 0.904);
+    text-align: center;
+    font-family: $font;
+  }
+}

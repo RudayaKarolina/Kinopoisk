@@ -1,67 +1,84 @@
-.registr-wrapper {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    z-index: 8;
-    .background-registr {
-      img {
-        position: absolute;
-        top: -50px;
-        left: -100px;
-        rotate: 20deg;
-        width: 170%;
-        height: 170%;
-      }
-      .valid-pass{
-        position: fixed;
+@import "../../style/vars.scss";
+
+.registr_wrapper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 8;
+  font-family: $font;
+  .background_registr {
+    .background_fon {
+      position: absolute;
+      top: -50px;
+      left: -100px;
+      rotate: 20deg;
+      width: 170%;
+      height: 170%;
+    }
+    .valid_registr {
+      position: fixed;
+      color: $color;
+      bottom: 103px;
+      text-align: center;
+      font-size: 14px;
+      font-family: $font;
+    }
+    .registr_form {
+      width: 350px;
+      height: 550px;
+      background-color: black;
+      border-radius: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding-top: 30px;
+      .registr_heading {
         color: white;
-        bottom: 103px;
         text-align: center;
-font-size: 14px;
+        width: 80%;
+        font-family: $font;
       }
-      .form {
-        width: 350px;
-        height: 550px;
+      .registr_input {
+        width: 80%;
+        height: 50px;
+        border-radius: 20px;
+        border: 2px solid grey;
+        padding-left: 20px;
+        outline: none;
+        color: white;
         background-color: black;
-        border-radius: 50px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        font-family: $font;
+      }
+      .registr_button {
+        width: 80%;
+        background-color: white;
+        color: black;
+        height: 50px;
+        border-radius: 20px;
+        font-size: 18px;
+        border: none;
+        font-weight: 700;
+        margin-top: 40px;
+        font-family: $font;
+      }
+      .wrapper_back {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        padding-top: 30px;
-        h2 {
-          color: white;
-          text-align: center;
-          width: 80%;
+        gap: 10px;
+        position: fixed;
+        top: 35px;
+        left: 40px;
+        cursor: pointer;
+        .back_image {
+          width: 30px;
         }
-        input {
-          width: 80%;
-          height: 50px;
-          border-radius: 20px;
-          border: 2px solid grey;
-          padding-left: 20px;
-          outline: none;
-          color: white;
-          background-color: black;
-        }
-        button {
-          width: 80%;
-          background-color: white;
-          color: black;
-          height: 50px;
-          border-radius: 20px;
-          font-size: 18px;
-          border: 2px solid grey;
-          font-weight: 700;
-          margin-top: 40px;
-        }
-        
       }
     }
+  }
 }

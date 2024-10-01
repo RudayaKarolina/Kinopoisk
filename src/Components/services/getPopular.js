@@ -1,7 +1,7 @@
-export async function getFilms() {
+export async function getPopular() {
   try {
     const resp = await fetch(
-      "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1",
+      "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1",
       {
         method: "GET",
         headers: {
@@ -10,8 +10,7 @@ export async function getFilms() {
         },
       }
     );
-    const data = await resp.json();
-    const films = await data.items;
+    const films = await resp.json();
     return films;
   } catch (e) {
     console.log(e);

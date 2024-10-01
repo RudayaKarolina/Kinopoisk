@@ -1,0 +1,28 @@
+.wrapper-app {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  .fon_image {
+    width: 120%;
+    height: 120%;
+    rotate: 10deg;
+  }
+}
+.wrapper_black_background {
+  background-color: rgba(0, 0, 0);
+  height: 100%;
+  min-height: 100vh;
+}
+.wrapper_cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.main_content {
+  padding-top: 130px;
+  background-color: rgb(0, 0, 0);
+}

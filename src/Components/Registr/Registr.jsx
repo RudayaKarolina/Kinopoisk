@@ -3,6 +3,7 @@ import registrUser from "./registrUser";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../services/database";
+import backImage from "../../assets/back.png";
 import fon from "../../assets/login-fon.jfif";
 import "./Registr.scss";
 
@@ -22,9 +23,6 @@ export default function Registr() {
 
   useEffect(() => {
     setValidPass(false);
-  }, [password, secondpassword]);
-
-  useEffect(() => {
     setPassLength(false);
   }, [password, secondpassword]);
 
@@ -37,15 +35,24 @@ export default function Registr() {
   }, [password, secondpassword, name, surname, email]);
 
   return (
-    <div className="registr-wrapper">
-      <div className="background-registr">
-        <img src={fon} alt="logo" />
-        <form className="form">
-          <h2>Регистрация</h2>
+    <div className="registr_wrapper">
+      <div className="background_registr">
+        <img src={fon} alt="logo" className="background_fon" />
+        <form className="registr_form">
+          <div
+            className="wrapper_back"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            <img src={backImage} alt="backImage" className="back_image" />
+          </div>
+          <h2 className="registr_heading">Регистрация</h2>
           <input
             type="text"
             placeholder="Имя"
             value={name}
+            className="registr_input"
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -53,6 +60,7 @@ export default function Registr() {
             type="text"
             placeholder="Фамилия"
             value={surname}
+            className="registr_input"
             onChange={(e) => setSurname(e.target.value)}
             required
           />
@@ -60,6 +68,7 @@ export default function Registr() {
             type="email"
             placeholder="E-mail"
             value={email}
+            className="registr_input"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -67,6 +76,7 @@ export default function Registr() {
             type="password"
             placeholder="Пароль"
             value={password}
+            className="registr_input"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -74,11 +84,13 @@ export default function Registr() {
             type="password"
             placeholder="Повторите пароль"
             value={secondpassword}
+            className="registr_input"
             onChange={(e) => setSecondpassword(e.target.value)}
             required
           />
           <button
             type="button"
+            className="registr_button"
             onClick={() => {
               registrUser(
                 {
@@ -101,17 +113,17 @@ export default function Registr() {
           >
             Зарегистрироваться
           </button>
-          {validPass && <p className="valid-pass">Пароли не совпадают!</p>}
+          {validPass && <p className="valid_registr">Пароли не совпадают!</p>}
           {passLength && (
-            <p className="valid-pass">
+            <p className="valid_registr">
               Пароль должен содержать минимум 6 символов!
             </p>
           )}
           {emptyField && (
-            <p className="valid-pass">Все поля должны быть заполнены!</p>
+            <p className="valid_registr">Все поля должны быть заполнены!</p>
           )}
           {validUser && (
-            <p className="valid-pass">
+            <p className="valid_registr">
               Такой пользователь уже существует или введен неправильный e-mail!
             </p>
           )}
